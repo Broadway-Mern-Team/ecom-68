@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# App folder 
+```jsx
+  // /app 
+  //      /folder => route
+  // /app/layout.tsx  => layout of our project homepage - component 
+  // /app/page.tsx    => routing file that get loadedon layout
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Web Hook
+  - Special functions that provides some features(state, effect, ref, context, optimization, ...)
+  - function starts with `use` keyword is a hook
+  - Hook can only be used in `client side component`
+    - Any file that has `use client` directive at the top is a client component
+  
+## State Hook
+  - Any data stored or created within component is a state
+  ```jsx
+    'use client';
+    import {useState} from "react";
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    //....
+    const [stateName, setStateName] = useState<DataType>(defaultValue)
+    
+  ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  A <------> B
 
-## Learn More
+  A <-------> B (2 immediate Response, hook(queue))
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Frontend Integration(API integration)
+- API provide -> Application Programming Interface that connects the Frontend/ mobile application/Desktop application with the Backend(API) where data are manipulated and maintained in a relational or non-relational structure(DB).
+- Packages to connect the API(BE) by the FE - `XMLHTTPRequest (XHR)` or `Axios` or `fetch`
+- Frontend api connection requires Backend endpoint(urls) -> on whatever method is used to develop API 
+  - API types `REST`, `SOAP`, `gRPC`, `WebSocket`, `WebHook`, `GraphQL`, `MCP` (Protocol and architecutre)
+  - Traget Audience and Scope `Private Api`, `Public Api`
+- Website/Web Application usages most of the time `REST`, `GraphQL`, `gRPC`, `WebSocket`, `WebHook`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# IT Company 
+```txt
+
+                      Board 
+            CEO       MD        CTO
+                            Departments (IT)      Product Owner/Product Manager
+      Sub-Dept(FullStack) Sub-Dept(FE) Sub-Dept(BE) Sub-Dept(UI/UX) Sub-Dept(QA) Sub-Dept(Mobile App(hybrid))
+        Dept Head           Dept Head     Dept Head     Dept Head           
+        Team Lead 
+        Senior Developers(High investment)
+          S1, S2, S3
+        Mid-level Developers
+          M1, M2, M3
+        Junior Developers (Risk) - Vibe coder With Code ()
+          J1, J2, J3
+        Associates Developers
+        Interns Developers
+
+```
+
+
+
+### Axios methods 
+```tsx
+
+  axios.get('/url', options);
+  axios.post('/url', data, options);
+  axios.put('/url', data, options);
+  axios.patch('/url', data, options);
+  axios.delete('/url', options);
+
+  // options => headers, params, cookies, config, settings, auth, abortController, ....
+```
