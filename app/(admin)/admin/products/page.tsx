@@ -98,7 +98,7 @@ export default async function ProductListing({searchParams}: Props) {
           </thead>
           <tbody>
             {products && products.length > 0 ? (
-              products.map((prod, index: number) => {
+              products.map((prod: {thumbnail:string, title: string, category?:string, brand: string, price:number, seller: string}, index: number) => {
                 return (
                   <tr key={index}>
                     <td className="bg-white p-3 border border-gray-200">

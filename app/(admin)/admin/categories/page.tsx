@@ -52,7 +52,7 @@ export default async function CategoryListing() {
           </thead>
           <tbody>
             {data && data.length > 0 ? (
-              data.map((cat, index: number) => {
+              data.map((cat: {name: string, slug:string, url: string}, index: number) => {
                 return (
                   <tr key={index}>
                     <td className="bg-white p-3 border border-gray-200">
